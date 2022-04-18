@@ -1,0 +1,199 @@
+
+
+MDScreen:
+    AKSilverAppbar:
+        max_height: '250dp'
+        title:'Setting'
+        left_action_items: [["arrow-left", lambda x: None]]
+        right_action_items: [["magnify", lambda x: None]]
+        pin_top: True
+        hide_toolbar: True
+        radius: dp(20)
+        toolbar_bg: app.theme_cls.primary_color
+        AKSilverAppbarHeader:
+            MDScreen:
+                md_bg_color: app.theme_cls.primary_color
+                MDBoxLayout:
+                    adaptive_height:True
+                    orientation: "vertical"
+                    pos_hint:{'center_x':.5,'center_y':.5}
+                    spacing:"20dp"
+                    MDBoxLayout:
+                        size_hint:None,None
+                        size:'85dp','85dp'
+                        pos_hint:{'center_x':.5,'center_y':.5}
+                        Image:
+                            source: "assets/images/profile-pic.png"
+                            allow_stretch: True
+                            keep_ratio: False
+                    MDLabel:
+                        text:'example@email.com'
+                        halign:"center"
+                        adaptive_height:True
+        AKSilverAppbarContent:
+            padding:'20dp'
+            spacing:'20dp'
+            id: content
+            size_hint_y: None
+            height: self.minimum_height
+            orientation: "vertical"
+            MDLabel:
+                text:"COMMUNICATIONS"
+                adaptive_height:True
+            MDCard:
+                size_hint_y:None
+                height:"180dp"
+                orientation:"vertical"
+                radius:20
+                padding:"10dp"
+                TwoLineIconListItem:
+                    text: "Wireless and Network"
+                    secondary_text: "Wi-Fi . BlueTooth"
+                    IconLeftWidget:
+                        icon: "assets/images/wifi.png"
+                TwoLineIconListItem:
+                    text: "SMS"
+                    secondary_text: "sms manager . Airplane mode"
+                    divider:None
+                    IconLeftWidget:
+                        icon: "assets/images/sim-card.png"
+            MDLabel:
+                text:"NOTIFICATIONS"
+                adaptive_height:True
+            MDCard:
+                size_hint_y:None
+                height:"80dp"
+                orientation:"vertical"
+                radius:20
+                padding:"10dp"
+                TwoLineIconListItem:
+                    text: "Notifications"
+                    secondary_text: "Status bar . Do not disturb"
+                    divider:None
+                    IconLeftWidget:
+                        icon: "assets/images/bell.png"
+            MDLabel:
+                text:"DEVICE"
+                adaptive_height:True
+            MDCard:
+                size_hint_y:None
+                height:"450dp"
+                orientation:"vertical"
+                radius:20
+                padding:"10dp"
+                TwoLineIconListItem:
+                    text: "Lock Screen"
+                    secondary_text: "Screen lock type"
+                    IconLeftWidget:
+                        icon: "assets/images/password.png"
+                TwoLineIconListItem:
+                    text: "Sounds and Vibration"
+                    secondary_text: "Sound mode . Ringtone"
+                    IconLeftWidget:
+                        icon: "assets/images/volume.png"
+                TwoLineIconListItem:
+                    text: "Calls"
+                    secondary_text: "Calls . Contacts"
+                    IconLeftWidget:
+                        icon: "assets/images/phone-call.png"
+
+                TwoLineIconListItem:
+                    text: "Storage"
+                    secondary_text: "Storage . Memory"
+                    IconLeftWidget:
+                        icon: "assets/images/sd-card.png"
+                TwoLineIconListItem:
+                    text: "Battery"
+                    secondary_text: "Device Protection"
+                    IconLeftWidget:
+                        icon: "assets/images/smartphone.png"
+
+                TwoLineIconListItem:
+                    text: "Apps"
+                    secondary_text: "Default apps . App setting"
+                    divider:None
+                    IconLeftWidget:
+                        icon: "assets/images/mobile-app.png"
+            MDLabel:
+                text:"PERSONAL"
+                adaptive_height:True
+            MDCard:
+                size_hint_y:None
+                height:"310dp"
+                orientation:"vertical"
+                radius:20
+                padding:"10dp"
+                TwoLineAvatarIconListItem:
+                    text: "Dark Theme"
+                    secondary_text: "switch between dark and light themes"
+
+                    IconLeftWidget:
+                        icon: "assets/images/dark-mode.png"
+                    IconRightWidget:
+                        icon: "checkbox-marked" if app.theme_cls.theme_style == "Dark" else "checkbox-blank-outline"
+                        on_release:app.theme_cls.theme_style = "Light" if app.theme_cls.theme_style == "Dark" else 'Dark'
+                        theme_text_color:'Custom'
+                        text_color:app.theme_cls.primary_color
+
+                TwoLineIconListItem:
+                    text: "Location"
+                    secondary_text: "Locations permissions . Locations requests"
+                    IconLeftWidget:
+                        icon: "assets/images/placeholder.png"
+                TwoLineIconListItem:
+                    text: "Languages"
+                    secondary_text: "Input Languages . Keyboard Languages"
+                    IconLeftWidget:
+                        icon: "assets/images/global.png"
+
+                TwoLineIconListItem:
+                    text: "Date and Time"
+                    secondary_text: "Time zone"
+                    divider:None
+                    IconLeftWidget:
+                        icon: "assets/images/schedule.png"
+            MDLabel:
+                text:"ACCOUNTS"
+                adaptive_height:True
+            MDCard:
+                size_hint_y:None
+                height:"240dp"
+                orientation:"vertical"
+                radius:20
+                padding:"10dp"
+                TwoLineIconListItem:
+                    text: "FaceBook"
+                    secondary_text: "Facebook accounts settings"
+                    IconLeftWidget:
+                        icon: "assets/images/facebook.png"
+                TwoLineIconListItem:
+                    text: "Google"
+                    secondary_text: "Google accounts settings"
+                    IconLeftWidget:
+                        icon: "assets/images/google.png"
+                TwoLineIconListItem:
+                    text: "Whatsapp"
+                    secondary_text: "Whatsapp accounts settings"
+                    divider:None
+                    IconLeftWidget:
+                        icon: "assets/images/whatsapp.png"
+
+
+            MDLabel:
+                text:"ABOUT"
+                adaptive_height:True
+            MDCard:
+                size_hint_y:None
+                height:"80dp"
+                orientation:"vertical"
+                radius:20
+                padding:"10dp"
+                TwoLineIconListItem:
+                    text: "About Device"
+                    secondary_text: "Phone name . Status . Legal information"
+                    divider:None
+                    IconLeftWidget:
+                        icon: "assets/images/info.png"
+
+
+
